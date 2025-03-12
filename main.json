@@ -45,7 +45,7 @@
       "content": "<h2>turgid</h2><p>If the solution surrounding a plant cell is hypotonic and therefore less concentrated than the contents inside the cell, water will enter the plant cell by osmosis. </p><p>This causes there to be more pressure against the cell walls,<br>The cells will be firm and swollen and will therefore<br>become turgid.</p>"
     },
     "plasmolysed": {
-      "content": "<h2>plasmolysed</h2><p>The cytoplasm shrinks and pulls away from the cell wall</p><p>$$\\textrm{Change in Ep} = \\textrm{mass (kg)} * \\textrm{gravitational field strength (G)} * \\textrm{change in height (m)}$$</p><ul><li>When an object moves upwards, its gravitational potential energy increases</li><li>Could also be weight (N) X change in height (m)</li><li>Earth's gravitational field strength: 9.8 N/kg or 9.8G</li><li>Greek letter delta - Change in</li></ul>"
+      "content": "<h2>plasmolysed</h2><p>The cytoplasm shrinks and pulls away from the cell wall</p>"
     },
     "democritus": {
       "content": "<h2>democritus</h2><ul><li>(470-380BC)</li><li>Came up with the concept of the atom, the smallest particle that cannot be further broken down</li></ul>"
@@ -111,9 +111,15 @@
       "content": "<h2>units helper</h2><p>J - Joules, universal unit of energy</p><p>W - Watts, unit of power</p><p>N - Newtons, unit of force</p>"
     },
     "work done": {
-      "content": "<h2>work done</h2><p>$$\\mathrm{Work\\ done\\ (J)} = \\mathrm{Force\\ applied\\ (N)} \\times \\mathrm{Distance\\ (in\\ direction\\ of\\ the\\ force,\\ m)}$$</p>"
+      "content": "<h2>work done</h2><p>$$\\\\mathrm{Work\\\\ done\\\\ (J)} = \\\\mathrm{Force\\\\ applied\\\\ (N)} \\\\times \\\\mathrm{Distance\\\\ (in\\\\ direction\\\\ of\\\\ the\\\\ force,\\\\ m)}$$</p>"
     },
     "power": {
-      "content": "<h2>power</h2><p>$$\\mathrm{Power\\ (W)} = \\frac{\\mathrm{Work\\ done\\ (J)}}{\\mathrm{Time\\ (s)}}$$</p>"
+      "content": "<h2>power</h2><p>$$\\\\mathrm{Power\\\\ (W)} = \\\\frac{\\\\mathrm{Work\\\\ done\\\\ (J)}}{\\\\mathrm{Time\\\\ (s)}}$$</p>"
+    },
+    "efficiency": {
+      "content": "<h2>efficiency</h2><p>Efficiency = \\[\\frac{\\mathrm{Useful\\ output\\ energy\\ (J)}}{\\mathrm{Total\\ input\\ energy\\ (J)}} \\times 100\\] for percentage. Efficiency has no set units, and percentage is a common way of representing it.</p><p><strong>How to reduce wasted energy (increase efficiency) by circumstance:</strong></p><table><thead><tr><th>Circumstance</th><th>Solution</th></tr></thead><tbody><tr><td>Friction between the moving parts causes heating</td><td>Lubricate the moving parts to reduce friction</td></tr><tr><td>The resistance of a wire causes the wire to get hot when a current passes through it</td><td>Use a lower resistance material for the wire in the circuit</td></tr><tr><td>Air resistance causes a force on a moving object that opposes its motion. Energy transferred from the object to the surroundings by this force is wasted</td><td>Streamline the object to reduce air resistance</td></tr><tr><td>Sound created by machinery causes energy transfer to the surroundings</td><td>Dampen noise (tighten loose parts to reduce rattling and add damping material)</td></tr></tbody></table>"
+    },
+    "gravitational potential energy": {
+      "content":"<h2>gravitational potential energy</h2><p>$$\\\\textrm{Change\\ in\\ Ep} = \\\\textrm{mass\\ (kg)} * \\\\textrm{gravitational\\ field\\ strength\\ (G)} * \\\\textrm{change\\ in\\ height\\ (m)}$$</p><ul><li>When an object moves upwards, its gravitational potential energy increases</li><li>Could also be weight (N) X change in height (m)</li><li>Earth's gravitational field strength: 9.8 N/kg or 9.8G</li><li>Greek letter delta - Change in</li></ul>"
     }
   }
