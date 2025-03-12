@@ -12,13 +12,19 @@ async function searchHTML(query) {
 
         const queryWords = query.toLowerCase().split(/\s+/);
 
-        // Filter keys that contain all query words
+        // Filter keys that contain at least one of the query words
         const results = Object.keys(data).filter(key => {
             const keyLower = key.toLowerCase();
-            return queryWords.every(word => keyLower.includes(word));
+            return queryWords.some(word => keyLower.includes(word)); // Check if any word matches
         });
 
-        // Return the matching content fields
+        // Print the matching results and their content
+        results.forEach(key => {
+            console.log(`Found match in: ${key}`);
+            console.log(data[key].content); // Print the content associated with the key
+        });
+
+        // Optionally, return all matching content if needed
         return results.map(key => data[key].content).join('');
     } catch (error) {
         console.error('Error reading or parsing JSON:', error);
