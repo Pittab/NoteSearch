@@ -1,3 +1,8 @@
+document.getElementById('searchForm').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Prevents the page from refreshing
+    await searchHTML();
+});
+
 async function searchHTML() {
     try {
         const query = document.getElementById('searchText').value;
