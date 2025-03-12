@@ -1,5 +1,6 @@
-async function searchHTML(query) {
+async function searchHTML() {
     try {
+        const query = document.getElementById('searchText').value;
         const response = await fetch('main.json');
         const data = await response.json();
         
@@ -25,7 +26,7 @@ async function searchHTML(query) {
         });
 
         // Optionally, return all matching content if needed
-        return results.map(key => data[key].content).join('');
+        document.getElementById('searchResults').innerHTML = results.map(key => data[key].content).join('');
     } catch (error) {
         console.error('Error reading or parsing JSON:', error);
         return '';
