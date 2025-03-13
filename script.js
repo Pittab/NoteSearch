@@ -1,3 +1,4 @@
+var audio = new Audio('/assets/scatteredcells.opus');
 document.getElementById('searchForm').addEventListener('submit', async function(event) {
     event.preventDefault(); // Prevents the page from refreshing
     await searchHTML();
