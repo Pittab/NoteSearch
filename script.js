@@ -41,10 +41,10 @@ async function searchHTML() {
     }
     const elements = document.querySelectorAll('.math');
     elements.forEach(el => {
-    katex.render(el.textContent, el, {
-        throwOnError: false
+        katex.render(el.innerText, el, {
+            throwOnError: false
         });
-    }); 
+    });
 }
 
 async function songPlay(songURL) {
