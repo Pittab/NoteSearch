@@ -3,24 +3,6 @@ document.getElementById('searchForm').addEventListener('submit', async function(
     event.preventDefault(); // Prevents the page from refreshing
     await searchHTML();
 });
-var text = "none"
-const apiUrl = `https://glados.c-net.org/generate?text=${encodeURIComponent(text)}`;
-
-fetch(apiUrl)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.blob();
-  })
-  .then(blob => {
-    const audioUrl = URL.createObjectURL(blob);
-    const audio = new Audio(audioUrl);
-    audio.play();
-  })
-  .catch(error => {
-    console.error('There was a problem with the fetch operation:', error);
-});
 
 async function searchHTML() {
   try {
@@ -70,7 +52,24 @@ async function searchHTML() {
 }
 
 async function GLaDOS(){
-    text = document.getElementById('searchResults').innerHTML;
+  var text = document.getElementById('searchResult').innerHTML;
+  var apiUrl = `https://glados.c-net.org/generate?text=${encodeURIComponent(text)}`;
+  
+  fetch(apiUrl)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.blob();
+    })
+    .then(blob => {
+      const audioUrl = URL.createObjectURL(blob);
+      const audio = new Audio(audioUrl);
+      audio.play();
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+  });
     fetch(apiUrl)
 }
 
