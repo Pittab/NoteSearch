@@ -5,47 +5,53 @@ document.getElementById('searchForm').addEventListener('submit', async function(
 });
 
 async function searchHTML() {
-    try {
-        const query = document.getElementById('searchText').value;
-        const response = await fetch('main.json');
-        const data = await response.json();
-        hits = 0;
-        
-        console.log(data); // Log the data to inspect its structure
+  try {
+      const query = document.getElementById('searchText').value;
+      const response = await fetch('main.json');
+      const data = await response.json();
+      hits = 0;
 
-        // Check if data is an object
-        if (typeof data !== 'object') {
-            throw new Error('Data is not an object');
-        }
+      console.log(data); // Log the data to inspect its structure
 
-        const queryWords = query.toLowerCase().split(/\s+/);
+      if (typeof data !== 'object') {
+          throw new Error('Data is not an object');
+      }
 
-        // Filter keys that contain at least one of the query words
-        const results = Object.keys(data).filter(key => {
-            const keyLower = key.toLowerCase();
-            return queryWords.some(word => keyLower.includes(word)); // Check if any word matches
-        });
+      const queryWords = query.toLowerCase().split(/\s+/);
 
-        // Print the matching results and their content
-        results.forEach(key => {
-            console.log(`Found match in: ${key}`);
-            hits += 1;
-            console.log(data[key].content); // Print the content associated with the key
-        });
+      const results = Object.keys(data).filter(key => {
+          const keyLower = key.toLowerCase();
+          return queryWords.some(word => keyLower.includes(word));
+      });
 
-        // Optionally, return all matching content if needed
-        document.getElementById('searchResults').innerHTML = hits+" successful hits in the data(bass) "+results.map(key => data[key].content).join('');
-    } catch (error) {
-        console.error('Error reading or parsing JSON:', error);
-        return '';
-    }
-    const elements = document.querySelectorAll('.math');
-    elements.forEach(el => {
-        katex.render(el.innerText, el, {
-            throwOnError: false
-        });
-    });
+      results.forEach(key => {
+          console.log(`Found match in: ${key}`);
+          hits += 1;
+          console.log(data[key].content);
+      });
+
+      // Update results in the DOM
+      document.getElementById('searchResults').innerHTML = 
+          hits + " successful hits in the data(bass) " + 
+          results.map(key => `<p class="math">${data[key].content}</p>`).join('');
+
+      // Wait for the DOM to update, then render KaTeX
+      requestAnimationFrame(() => {
+          const elements = document.querySelectorAll('.math');
+          elements.forEach(el => {
+              katex.render(el.innerText, el, {
+                  throwOnError: false
+              });
+          });
+      });
+
+  } catch (error) {
+      console.error('Error reading or parsing JSON:', error);
+      return '';
+  }
 }
+
+
 
 async function songPlay(songURL) {
     if (easterAudio) {
