@@ -36,4 +36,5 @@ async function searchHTML() {
         console.error('Error reading or parsing JSON:', error);
         return '';
     }
+    renderMathInElement(document.body);
 }
