@@ -36,5 +36,10 @@ async function searchHTML() {
         console.error('Error reading or parsing JSON:', error);
         return '';
     }
-    renderMathInElement(document.body);
+    const elements = document.querySelectorAll('.math');
+    elements.forEach(el => {
+    katex.render(el.textContent, el, {
+        throwOnError: false
+        });
+    }); 
 }
