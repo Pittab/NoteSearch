@@ -52,7 +52,7 @@ async function searchHTML() {
 }
 
 async function GLaDOS(){
-  var text = document.getElementById('searchResult').innerHTML;
+  var text = document.getElementById('searchResults').innerHTML;
   var apiUrl = `https://glados.c-net.org/generate?text=${encodeURIComponent(text)}`;
   
   fetch(apiUrl)
@@ -63,8 +63,8 @@ async function GLaDOS(){
       return response.blob();
     })
     .then(blob => {
-      const audioUrl = URL.createObjectURL(blob);
-      const audio = new Audio(audioUrl);
+      audioUrl = URL.createObjectURL(blob);
+      audio = new Audio(audioUrl);
       audio.play();
     })
     .catch(error => {
