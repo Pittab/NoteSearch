@@ -8,6 +8,7 @@ async function searchHTML() {
         const query = document.getElementById('searchText').value;
         const response = await fetch('main.json');
         const data = await response.json();
+        hits = 0;
         
         console.log(data); // Log the data to inspect its structure
 
@@ -27,11 +28,12 @@ async function searchHTML() {
         // Print the matching results and their content
         results.forEach(key => {
             console.log(`Found match in: ${key}`);
+            hits += 1;
             console.log(data[key].content); // Print the content associated with the key
         });
 
         // Optionally, return all matching content if needed
-        document.getElementById('searchResults').innerHTML = results.map(key => data[key].content).join('');
+        document.getElementById('searchResults').innerHTML = hits+" successful hits in the data(bass) "+results.map(key => data[key].content).join('');
     } catch (error) {
         console.error('Error reading or parsing JSON:', error);
         return '';
@@ -43,3 +45,49 @@ async function searchHTML() {
         });
     }); 
 }
+
+async function songPlay(songURL) {
+    console.log("You found an easter egg. Enjoy the sound");
+    try {
+      muct = document.getElementById('musiccontrol')
+      muct.innerHTML = "Controls are disabled while easter audio is running";
+      muct.onclick = function () { alert("stop trying") };
+    } catch {
+      console.log("djsifsd");
+    }
+    if (easterAudio) {
+      easterAudio.pause();
+      easterAudio = new Audio(songURL);
+    } else {
+      var easterAudio = new Audio(songURL);
+    }
+  
+    eaudion = true;
+  
+    if (audio) {
+      audio.pause();
+    }
+  
+    easterAudio.play();
+    easterAudio.addEventListener("ended", function () {
+      eaudion = false;
+      try {
+        muct = document.getElementById('musiccontrol');
+        muct.innerHTML = "Click to pause music";
+        muct.onclick = pausemusic;
+        audio.play();
+      } catch {
+        console.log("djsifsd2");
+      }
+    });
+  }
+  
+  async function playAprilCells() {
+    await songPlay('https://wilburwilliams.uk/assets/aprilscattered.opus');
+  }
+  
+
+document.addEventListener("DOMContentLoaded", function(){
+    playAprilCells()
+    console.log("This site uses the RMT (Rescue My Tests) Database and search system. If you're reading this on a site that isn't rescue-my-tests.pages.dev, congratulations! Now you know who the website dev is stealing from!")
+})
