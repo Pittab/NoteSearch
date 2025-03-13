@@ -48,14 +48,6 @@ async function searchHTML() {
 }
 
 async function songPlay(songURL) {
-    console.log("You found an easter egg. Enjoy the sound");
-    try {
-      muct = document.getElementById('musiccontrol')
-      muct.innerHTML = "Controls are disabled while easter audio is running";
-      muct.onclick = function () { alert("stop trying") };
-    } catch {
-      console.log("djsifsd");
-    }
     if (easterAudio) {
       easterAudio.pause();
       easterAudio = new Audio(songURL);
@@ -89,6 +81,5 @@ async function songPlay(songURL) {
   
 
 document.addEventListener("DOMContentLoaded", function(){
-    playAprilCells()
     console.log("This site uses the RMT (Rescue My Tests) Database and search system. If you're reading this on a site that isn't rescue-my-tests.pages.dev, congratulations! Now you know who the website dev is stealing from!")
 })
