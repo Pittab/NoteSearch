@@ -124,5 +124,8 @@
     },
     "law of conservation of energy": {
       "content":"<h2>Law of conservation of energy</h2><p>The total energy of a closed system is constant, energy cannot be created or destroyed, but it can transfer from one form to another</p>"
+    },
+    "elastic potential energy":{
+      "content":"<h2>Elastic potential energy</h2><p class='math'>\\textrm{Elastic potential energy} = 0.5 * //textrm{Spring constant (k)} * //textrm{extension}^2</p>"
     }
   }
