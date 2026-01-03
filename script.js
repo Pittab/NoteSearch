@@ -50,38 +50,6 @@ async function searchHTML() {
       return '';
   }
 }
-
-async function songPlay(songURL) {
-    if (easterAudio) {
-      easterAudio.pause();
-      easterAudio = new Audio(songURL);
-    } else {
-      var easterAudio = new Audio(songURL);
-    }
-  
-    eaudion = true;
-  
-    if (audio) {
-      audio.pause();
-    }
-  
-    easterAudio.play();
-    easterAudio.addEventListener("ended", function () {
-      eaudion = false;
-      try {
-        muct = document.getElementById('musiccontrol');
-        muct.innerHTML = "Click to pause music";
-        muct.onclick = pausemusic;
-        audio.play();
-      } catch {
-        console.log("djsifsd2");
-      }
-    });
-  }
-  
-  async function playAprilCells() {
-    await songPlay('https://wilburwilliams.uk/assets/aprilscattered.opus');
-  }
   
 
 document.addEventListener("DOMContentLoaded", function(){
